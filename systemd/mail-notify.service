@@ -1,0 +1,9 @@
+[Unit]
+Description=Mail notifier for libnotify
+
+[Service]
+Type=oneshot
+ExecStart=/opt/mail-notify/src/mail-notify.py
+
+[Install]
+WantedBy=multi-user.target

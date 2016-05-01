@@ -1,0 +1,8 @@
+[Unit]
+Description=Mail notifier or libnotify
+
+[Timer]
+OnUnitActiveSec=1min
+
+[Install]
+WantedBy=timers.target

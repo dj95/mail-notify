@@ -1,0 +1,18 @@
+{
+    "accounts":[
+        {
+            "name":"",
+            "mail":"",
+            "server":"",
+            "username":"",
+            "password":""
+        },
+        {
+            "name":"",
+            "mail":"",
+            "server":"",
+            "username":"",
+            "password":""
+        }
+    ]
+}
