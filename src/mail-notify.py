@@ -59,7 +59,7 @@ class MailThread(Thread):
                         m.logout()
                 except Exception as e:
                     continue
-            self.stop_event.wait(60.0)
+            self.stop_event.wait(self.__interval)
 
 
 def parse_config(path):
