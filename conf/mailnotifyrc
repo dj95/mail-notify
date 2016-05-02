@@ -14,5 +14,6 @@
             "username":"",
             "password":""
         }
-    ]
+    ],
+    "interval":1
 }

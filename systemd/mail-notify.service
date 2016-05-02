@@ -2,7 +2,7 @@
 Description=Mail notifier for libnotify
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/opt/mail-notify/src/mail-notify.py
 
 [Install]

@@ -1,7 +1,8 @@
 # Mailnotify
 
-A simple mail notifier, which show the count of unread
+A simple mail notifier, which shows the count of unread
 mails with libnotify for imap accounts.
+
 
 ### Requirements
 
@@ -10,6 +11,7 @@ mails with libnotify for imap accounts.
     - imaplib
     - gi.repository
 - libnotify
+- A Notification provider*(e.g. dunst)*
 
 *And its dependencies...*
 
@@ -18,11 +20,42 @@ mails with libnotify for imap accounts.
 
 - Clone this repo to `/opt/`
 - Copy the `mailnotifyrc` from `conf/` to `~/.mailnotifyrc`
-- Copy the systemd-timer and the relating systemd-user-service from `systemd/` to `.config/systemd/user/`
+- Copy the systemd-user-service from `systemd/` to `.config/systemd/user/`
 - Reload your user-services with `systemctl --user daemon-reload`
-- Start the service with `systemctl --user start mail-notify`
+- Start the service with `systemctl --user start mail-notify.service`
 - *Optional:* To start the systemd service at the beginning of your user session, enable it
-    with `systemctl --user enable mail-notify`
+    with `systemctl --user enable mail-notify.service`
+
+
+### Configuration
+
+Fill in your account data into the json object in your `mailnotifyrc`.
+
+For example:
+
+```
+{
+    "accounts":[
+        {
+            "name":"Mail1",
+            "mail":"mail1@mail.com",
+            "server":"imap.mail.com",
+            "username":"mail1",
+            "password":"password"
+        },
+        {
+            "name":"Mail2",
+            "mail":"mail2@mail.com",
+            "server":"imap.mail.com",
+            "username":"mail2",
+            "password":"password2"
+        }
+    ],
+    "interval":1
+}
+```
+
+The interval-key specifies the interval in minutes, after which this script looks for new mails.
 
 
 ### License
